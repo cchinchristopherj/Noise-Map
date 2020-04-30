@@ -1,0 +1,668 @@
+/* Styles for the body element, specify the font */
+body { 
+  margin: 0; 
+  padding: 0;
+  font-family: 'Tw Cen MT', Sans-serif;
+}
+
+/* Styles for the Mapbox map, absolute positioning to fill the entire screen */
+.map {
+  position: absolute; 
+  top: 0; 
+  bottom: 0; 
+  width: 100%; 
+};
+
+/* "border-box" tells the browser to account for border and padding when width and height of elements are specified */
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+/* Style for span elements within div containers */
+div span{
+  vertical-align:middle;
+}
+
+.year_filter{
+  display: table-cell;
+  vertical-align: middle;
+  height: 30px;
+}
+
+/* CSS styles for slider element */
+#typeinp{
+  vertical-align:middle;
+  width:80px;
+}
+
+/* CSS styles for slider element for rendering in Internet Explorer */
+input[type=range]::-ms-track {
+  width: 300px;
+  height: 5px;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 6px 0;
+  /*remove default tick marks*/
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #777;
+  border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+  background: #ddd;
+  border-radius: 10px;
+}
+input[type=range]::-ms-thumb {
+  border: none;
+  border-radius: 50%;
+  background: goldenrod;
+}
+
+.disabled{
+  opacity:0.4;
+  pointer-events:none;
+}
+
+/* Style for dark radio button */
+#radio_dark{
+  vertical-align:middle;
+}
+
+/* Style for satellite radio button */
+#radio_satellite{
+  vertical-align:middle;
+}
+
+
+/* Style for the mode icons in the description of the application */
+.modeText{
+  font-size:14px;
+  /* Ensure the mode icons are in-line with the rest of the text */
+  vertical-align:text-bottom;
+}
+
+/* Style for the description of the application */
+.header{
+  width:200px;
+  height:70px;
+  /* Absolute positioning in the top left of the webpage */
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1;
+  text-align:center;
+}
+
+.btn_div {
+  z-index:1;
+  position: relative;
+  display: inline-block;
+}
+
+/* Style for a mode button */
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  opacity:0.9;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 1.0rem;
+  line-height: 1.4;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Display a pointer while hovering over a button */
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+/* Style for a mode button when active */
+.btn-warning {
+  color: #212529;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
+
+/* Style for a mode button when inactive */
+.btn-dark {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  opacity:1;
+} 
+
+/* CSS for the icons in the mode buttons */
+@font-face {
+  font-family: 'icomoon';
+  /* Loads data for icons from "fonts" folder */
+  src:  url('fonts/icomoon.eot?1pq5xz');
+  src:  url('fonts/icomoon.eot?1pq5xz#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?1pq5xz') format('truetype'),
+    url('fonts/icomoon.woff?1pq5xz') format('woff'),
+    url('fonts/icomoon.svg?1pq5xz#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mode icon for all three modes (aviation, road, rail) */
+.icon_all:before {
+  content: "\e900";
+}
+
+/* Mode icon for aviation only */
+.icon_av:before {
+  content: "\e901";
+}
+
+/* Mode icon for aviation and road */
+.icon_avroad:before {
+  content: "\e902";
+}
+
+/* Mode icon for road only */
+.icon_road:before {
+  content: "\e903";
+}
+
+/* Mode icon for rail only */
+.icon_rail:before {
+  content: "\e904";
+}
+
+/* The web viewer menu consists of the description in the upper left corner, the legend in the bottom left corner,
+and the control panel in the upper right corner. */
+/* Style for each component of the menu on the web viewer */
+.panel{
+  background-color: #fff;
+  border:1px solid #ffc107;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px white;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  z-index: 1;
+}
+
+/* Style for the div containing the control panel elements  */
+.container{
+  /* Absolute positioning for the control panel */
+  position:absolute;
+  /* CSS Grid allows you to programmatically specify a layout in rows and columns */
+  display:grid;
+  /* CSS Grid for Internet Explorer */
+  display:-ms-grid;
+  /* Ensures control panel is above the map in the visual stack order */
+  z-index:1;
+}
+
+/* CSS Grid works by first defining a grid of rows and columns of specified sizes. This grid is then divided into
+areas for subsections of the layout, such as a "header", "body", "sidebar", and "footer." Each area or 
+subsection spans a specified number of rows and columns in the grid. For example, the "header" area can span columns
+1-5 in the first row. The "body" can span columns 1-3 and rows 2-4 of the grid, while the "sidebar" can span
+columns 4-5 and rows 2-4 of the grid. In this way, the sidebar is placed to the right of the "body" in the final
+layout and below the header, which lies directly above the body and sidebar. The column widths can also be adjusted 
+to make columns 1-3 wider than columns 4-5, thereby giving more room for the body in the layout and less room for the
+sidebar. The row heights can also be adjusted to make row 1 smaller than rows 2-4, thereby giving less room for 
+the header in the layout and more room for the body and sidebar. These areas or subsections can also be repeated 
+and arranged however you like in the final layout. A second "body" area can, for example, be placed in columns
+1-3 and rows 5-7 of the grid so that it lies directly under the first "body" area. */
+
+/* In this web viewer, a grid will be created to define the layout of the control panel. There will be four 
+subsections: "main1", "main2", "main3", "searchBar" which correspond to the mode buttons, year slider, 
+basemap radio button group, and geocoder respectively. Each subsection is defined as a separate class, i.e. 
+the "main1" class, the "main2" class, etc. Within each class, the "grid-area" argument defines the name of
+the area or subsection that the class corresponds to in the layout. For example, in the class "main1" the
+value of the "grid-area" property is "main1", indicating that the area defined by the "main1" class will 
+be referred to as "main1" when assembling the layout. Each class defining a subsection has the value of 
+the "z-index" property set to 1, so that the area lies above the map in the visual stack order. */
+.main1{
+  grid-area:main1;
+  z-index:1;
+}
+
+.main2{
+  grid-area:main2;
+  z-index:1;
+}
+
+.main3{
+  grid-area:main3;
+  z-index:1;
+}
+
+.searchBar{
+  grid-area:searchBar;
+  z-index:1;
+}
+
+/* Media queries */
+/* The @media rule is used to display different styles for different media types and devices */
+/* In this case, the web viewer will have a different layout for the control panel depending on the size of the 
+device screen */
+/* For the widest screens above 1100px, define the grid and areas/subsections as follows */
+@media screen and (min-width:1100px){
+  .container{
+    /* Absolute positioning for div container holding all four control panel elements */
+    right:10px;
+    top:10px;
+    /* Define rows and column sizes */
+    /* In this case, the control panel elements are placed horizontally adjacent to each other in a row
+    with the mode buttons subsection slightly wider than the other elements */
+    grid-template-columns:repeat(3,200px) 260px;
+    grid-template-rows:35px;
+    /* Row and column size definitions for Internet Explorer */
+    -ms-grid-columns:200px 200px 200px 260px;
+    -ms-grid-rows:35px;
+    /* The "grid-template-areas" property uses the names of the areas/subsections to assemble them in the desired
+    final layout. In this case, they are placed horizontally adjacent to each other, with the searchBar subsection
+    furthest left and main1 subsection corresponding to the mode buttons furthest right */
+    grid-template-areas:
+      "searchBar main3 main2 main1";
+  }
+
+  /* For Internet Explorer, "grid-template-areas" cannot be used to assemble the layout. Instead, use the
+  "-ms-grid-column" property to specify which column an area/subsection should be placed within in the final
+  layout. To replicate the layout defined by the "grid-template-areas" property in non-IE browsers, place the
+  searchBar subsection in the first column, the main1 subsection in the fourth column, etc.  */
+  .main1{
+    -ms-grid-column:4
+  }
+
+  .main2{
+    -ms-grid-column:3
+  }
+
+  .main3{
+    -ms-grid-column:2
+  }
+
+  .searchBar{
+    -ms-grid-column:1
+  }
+}
+
+/* For medium-sized screens between 500px and 1100px, define the grid and areas/subsections as follows */
+@media screen and (max-width: 1100px)and (min-width:500px) {
+  .container{
+    right:10px;
+    top:10px;
+    /* In this case, the control panel elements are placed vertically adjacent to each other in a column */
+    grid-template-columns:260px;
+    grid-template-rows:repeat(4,35px);
+    -ms-grid-columns:260px;
+    -ms-grid-rows:35px 35px 35px 35px;
+    /* The searchBar subsection is the top-most element in the control panel and the "main1" subsection is the
+    lowest element in the control panel */
+    grid-template-areas:
+      "searchBar"
+      "main3"
+      "main2"
+      "main1";
+  }
+
+  /* For Internet Explorer, use the "-ms-grid-row" property to specify which row an area/subsection should be placed 
+  within in the final layout. To replicate the layout defined by the "grid-template-areas" property in non-IE browsers, 
+  place the searchBar subsection in the first row, the main1 subsection in the fourth row, etc.  */
+  .main1{
+    -ms-grid-row:4
+  }
+
+  .main2{
+    -ms-grid-row:3
+  }
+
+  .main3{
+    -ms-grid-row:2
+  }
+
+  .searchBar{
+    -ms-grid-row:1
+  }
+}
+
+/* For the smallest screens less than 500px, define the grid and areas/subsections as follows */
+@media screen and (max-width:500px){
+  /* In this case, the control panel elements are placed vertically adjacent to each other in a column and the
+  control panel itself is placed vertically below the description box for the web viewer */
+  .container{
+    /* Absolute positioning for the control panel vertically below the description box */
+    top:90px;
+    left:10px;
+    grid-template-columns:260px;
+    grid-template-rows:repeat(4,35px);
+    -ms-grid-columns:260px;
+    -ms-grid-rows:35px 35px 35px 35px;
+    grid-template-areas:
+      "searchBar"
+      "main3"
+      "main2"
+      "main1";
+  }
+
+  .main1{
+    -ms-grid-row:4
+  }
+
+  .main2{
+    -ms-grid-row:3
+  }
+
+  .main3{
+    -ms-grid-row:2
+  }
+
+  .searchBar{
+    -ms-grid-row:1
+  }
+}
+
+/* Style for the BTS logo image */
+.image{
+  /* Absolute positioning at the bottom right of the webpage */
+  position:absolute;
+  bottom:5px;
+  right:35px;
+  z-index:1;
+  /* Width and height */
+  width:83px;
+  height:45px;
+}
+
+/* Style for the legend title */
+.legend_title{
+  line-height:8px;
+}
+
+/* Style for the legend */
+.legend {
+font-weight:475;
+font-size:15px;
+background-color: #fff;
+border-radius: 10px;
+border:2px solid #ffc107;
+box-shadow: 0 1px 4px white;
+line-height:24px;
+padding: 7px;
+/* Absolute positioning for the legend in the bottom left of the webpage */
+position:absolute;
+bottom:30px;
+left:10px;
+z-index: 1;
+}
+ 
+/* Style for paragraph elements in the legend */
+.legend p {
+margin: 0 0 10px;
+}
+
+/* Style for square colored symbols in the legend, which are defined as span elements */
+.legend div span {
+border-radius: 10%;
+display: inline-block;
+height: 17px;
+margin-right: 10px;
+width: 17px;
+border-width:2px;
+}
+
+/* Mapbox Geocoder */
+.mapboxgl-ctrl-geocoder,
+.mapboxgl-ctrl-geocoder *,
+.mapboxgl-ctrl-geocoder *:after,
+.mapboxgl-ctrl-geocoder *:before {
+  box-sizing: border-box;
+}
+
+.mapboxgl-ctrl-geocoder {
+  font-size: 18px;
+  line-height: 24px;
+  font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  position: relative;
+  background-color: #fff;
+  width: 100%;
+  min-width: 200px;
+  z-index: 1;
+  border-radius: 4px;
+  transition: width .25s, min-width .25s;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  margin: 0;
+  color: #404040; /* fallback */
+  color: rgba(0, 0, 0, 0.75);
+  padding: 6px 45px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.mapboxgl-ctrl-geocoder--input::-ms-clear {
+  display: none; /* hide input clear button in IE */
+}
+
+.mapboxgl-ctrl-geocoder--input:focus {
+  color: #404040; /* fallback */
+  color: rgba(0, 0, 0, 0.75);
+  outline: 0;
+  box-shadow: none;
+  outline: thin dotted;
+}
+
+.mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--pin-right > * {
+  z-index: 2;
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  display: none;
+}
+
+/* Collapsed */
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl-geocoder--collapsed {
+  width: 50px;
+  min-width: 50px;
+  transition: width .25s, min-width .25s;
+}
+
+/* Suggestions */
+.mapboxgl-ctrl-geocoder .suggestions {
+  background-color: #fff;
+  border-radius: 4px;
+  left: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  top: 110%; /* fallback */
+  top: calc(100% + 6px);
+  z-index: 1000;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.mapboxgl-ctrl-bottom-left .suggestions,
+.mapboxgl-ctrl-bottom-right .suggestions {
+  top: auto;
+  bottom: 100%;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions > li > a {
+  cursor: default;
+  display: block;
+  padding: 6px 12px;
+  color: #404040;
+}
+
+.mapboxgl-ctrl-geocoder .suggestions > .active > a,
+.mapboxgl-ctrl-geocoder .suggestions > li > a:hover {
+  color: #404040;
+  background-color: #f3f3f3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion-title {
+  font-weight: bold;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion-title,
+.mapboxgl-ctrl-geocoder--suggestion-address {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Icons */
+.mapboxgl-ctrl-geocoder--icon {
+  display: inline-block;
+  vertical-align: middle;
+  speak: none;
+  fill: #757575;
+  top: 15px;
+}
+
+.mapboxgl-ctrl-geocoder--icon-search {
+  position: absolute;
+  top: 13px;
+  left: 7px;
+  width: 20px;
+  height: 20px;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  line-height: 1;
+}
+
+.mapboxgl-ctrl-geocoder--icon-close {
+  width: 20px;
+  height: 20px;
+  margin-top: 8px;
+  margin-right: 3px;
+}
+
+.mapboxgl-ctrl-geocoder--button:hover .mapboxgl-ctrl-geocoder--icon-close {
+  fill: #909090;
+}
+
+.mapboxgl-ctrl-geocoder--icon-loading {
+  width: 26px;
+  height: 26px;
+  margin-top: 5px;
+  margin-right: 0px;
+  -moz-animation: rotate 0.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  -webkit-animation: rotate 0.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  animation: rotate 0.8s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+}
+
+/* Animation */
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* Media queries*/
+@media screen and (min-width: 0px) {
+  .mapboxgl-ctrl-geocoder.mapboxgl-ctrl-geocoder--collapsed {
+    width: 36px;
+    min-width: 36px;
+  }
+
+  .mapboxgl-ctrl-geocoder {
+    font-size: 15px;
+    line-height: 20px;
+    height:100%;
+  }
+  .mapboxgl-ctrl-geocoder .suggestions {
+    font-size: 13px;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon {
+    top: 8px;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon-close {
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-right: 0;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon-search {
+    left: 7px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .mapboxgl-ctrl-geocoder--input {
+    height: 36px;
+    padding: 6px 35px;
+  }
+
+  .mapboxgl-ctrl-geocoder--icon-loading {
+    width: 26px;
+    height: 26px;
+    margin-top: -2px;
+    margin-right: -5px;
+  }
+
+  .mapbox-gl-geocoder--error{
+    color:#909090;
+    padding: 6px 12px;
+    font-size: 16px;
+    text-align: center
+  }
+}
