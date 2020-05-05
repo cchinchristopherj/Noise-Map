@@ -947,9 +947,9 @@ class Application extends React.Component {
                     {/* The <i> tags display the mode icons, depending on the class
                     name specified */}
                     <p>View Aviation (<i className='icon_av modeText'></i>
-                    ), Road (<i className='icon_road modeText'></i>
-                    ), Rail (<i className='icon_rail modeText'></i>
-                    ) Noise in the U.S. for 2016 and 2018
+                    ) and Highway (<i className='icon_road modeText'></i>
+                    ) 
+                    Noise in the <br></br> U.S. for 2016 and 2018
                     </p>
                 </div>
             </div>
