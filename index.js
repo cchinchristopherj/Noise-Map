@@ -44,31 +44,31 @@ var buttons_2018 = [3,0,1];
 // States, a source with noise data for Alaska, and a source with noise data for Hawaii.
 // The dictionary below connects the name of every source with its unique ID
 var source_ids = {
-    "icon_av_2016":"bts-geospatial.arxt3338",
-    "icon_av_2016_ak":"bts-geospatial.0mkxo9wm",
-    "icon_av_2016_hi":"bts-geospatial.4nzlq57z",
-    "icon_av_2018":"bts-geospatial.c20b2kws",
-    "icon_av_2018_ak":"bts-geospatial.6157icc2",
-    "icon_av_2018_hi":"bts-geospatial.44tatt0y",
-    "icon_road_2016":"bts-geospatial.8md7woa0",
-    "icon_road_2016_ak":"bts-geospatial.3zjo1wye",
-    "icon_road_2016_hi":"bts-geospatial.8m9qjdcj",
-    "icon_road_2018":"bts-geospatial.4dqm8wsi",
-    "icon_road_2018_ak":"bts-geospatial.7zdof0mt",
-    "icon_road_2018_hi":"bts-geospatial.5k6sohfc",
-    "icon_avroad_2016":"bts-geospatial.2c47as6b",
-    "icon_avroad_2016_ak":"bts-geospatial.afpycwuh",
-    "icon_avroad_2016_hi":"bts-geospatial.9548ov6g",
-    "icon_avroad_2018":"bts-geospatial.2c47as6b",
-    "icon_avroad_2018_ak":"bts-geospatial.0wb2bmj0",
-    "icon_avroad_2018_hi":"bts-geospatial.amcxbj90",
+    "icon_av_2016":"christopherchin.3ybl9olf",
+    "icon_av_2016_ak":"christopherchin.3bzsratq",
+    "icon_av_2016_hi":"christopherchin.apj62f6b",
+    "icon_av_2018":"christopherchin.82jtv456",
+    "icon_av_2018_ak":"christopherchin.4d0l3cc0",
+    "icon_av_2018_hi":"christopherchin.cwjsi6i3",
+    "icon_road_2016":"christopherchin.1w7mfaiq",
+    "icon_road_2016_ak":"christopherchin.0ti6qblb",
+    "icon_road_2016_hi":"christopherchin.djjornkj",
+    "icon_road_2018":"christopherchin.888u5vp8",
+    "icon_road_2018_ak":"christopherchin.4s1hyc14",
+    "icon_road_2018_hi":"christopherchin.5d9eoq6q",
+    "icon_avroad_2016":"christopherchin.c1x59vnp",
+    "icon_avroad_2016_ak":"christopherchin.6bryo3pd",
+    "icon_avroad_2016_hi":"christopherchin.5cic6i7h",
+    "icon_avroad_2018":"christopherchin.c1x59vnp",
+    "icon_avroad_2018_ak":"christopherchin.9n82tb31",
+    "icon_avroad_2018_hi":"christopherchin.5n5exjm1",
     "icon_all_2018":"",
-    "icon_all_2018_ak":"bts-geospatial.0wb2bmj0",
-    "icon_all_2018_hi":"bts-geospatial.amcxbj90",
+    "icon_all_2018_ak":"christopherchin.9n82tb31",
+    "icon_all_2018_hi":"christopherchin.5n5exjm1",
     "icon_rail_2018":""
 }
 // Mapbox GL access token
-mapboxgl.accessToken = 'pk.eyJ1IjoiYnRzLWdlb3NwYXRpYWwiLCJhIjoiY2syM2ZvYm53MWpwMDNkcXd2MWNnNm9idiJ9.po5FBF_C4WqfbyAcge-hVg';
+mapboxgl.accessToken = 'pk.eyJ1IjoiY2hyaXN0b3BoZXJjaGluIiwiYSI6ImNrOWw0YmxydDA2Mm4zcm41MDdhbzgyYjMifQ.R0zZEjttlarMY715ATxrVw';
 
 // React functions
 // React.js is a javascript library used to simplify designing user interfaces. It does so by breaking 
